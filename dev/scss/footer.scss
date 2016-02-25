@@ -1,0 +1,23 @@
+@import "~breakpoint-sass/stylesheets/_breakpoint.scss";
+
+footer{
+
+	// common
+	color: white;
+	font-family: 'Libre Baskerville', serif;
+	font-style: italic;
+	font-size: 14px;
+
+	//for w < 1280px
+	text-align: center;
+	margin-top: 100px;
+	padding-top: 10px;
+	border-top: 1px solid #999;
+	
+	// for w > 1280px
+	@include breakpoint(1280px){	
+		position: absolute;
+		right: 20px;
+		bottom: 10px;
+	}
+}

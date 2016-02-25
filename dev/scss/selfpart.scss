@@ -1,0 +1,99 @@
+@import "~breakpoint-sass/stylesheets/_breakpoint.scss";
+
+#selfpart{
+
+	//common
+	position: relative;
+	
+	font-family: 'Cutive Mono';
+	
+	color: #fff;
+
+	//for w<1280px
+	width: 70%;
+
+	margin: 0 auto 100px;
+	
+	display: block;
+
+	// for w>1280px
+	@include breakpoint(1280px){
+		width: 30vw;
+		height: 60vh;
+	
+		display: inline-block;
+	}
+}
+
+#selfpart:after{
+
+	// common
+	content: '';
+	
+	position: absolute;
+
+	background-color: rgba(255,255,255, 0.45);
+
+	// for w<1280px
+	width: 100%;
+	height: 3px;
+
+	bottom: -20px;
+	// left: 0;
+
+	transform: skewY(-8deg);
+
+	@include breakpoint(1280px){
+		width: 3px;
+		height: 60vh;
+		
+		top: 0;
+		right: 0;
+	
+		transform: skewX(-8deg);
+		
+	}
+}
+
+#selfpartInnerWrapper{
+
+	// for w < 1280px
+	width: 100%;
+	margin: 0 auto;
+
+	// for w > 1280px
+	@include breakpoint(1280px){
+		width: 80%;
+	
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+#sign{
+	//common
+	opacity: 0.55;
+
+	// for w < 1280px
+	width: 80%;
+	height: auto;
+
+	// for w>1280px
+	@include breakpoint(1280px){
+		width: 80%;
+		height: auto;
+	}
+}
+
+#email{
+	// float: right;
+	text-align: right;
+	position: relative;
+	top: -30px;
+
+	@include breakpoint(1280px){
+		float: none;
+	}
+}
+
