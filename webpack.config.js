@@ -38,7 +38,7 @@ module.exports = {
   },
   postcss: [ 
     autoprefixer({ browsers: ['last 2 versions']}),
-    // rucksack({ fallbacks: true}),
+    rucksack({ fallbacks: true}),
   ],
   resolveLoader: { 
     alias: { "url-loader": require.resolve("url-loader") }
