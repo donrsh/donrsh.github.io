@@ -8,16 +8,21 @@ footer{
 	font-style: italic;
 	font-size: 14px;
 
-	//for w < 1280px
 	text-align: center;
 	margin-top: 100px;
-	padding-top: 10px;
+	padding: 10px 0;
 	border-top: 1px solid #999;
+
+	background-color: rgba(#fff, 0.15);
 	
 	// for w > 1280px
-	@include breakpoint(1280px){	
-		position: absolute;
-		right: 20px;
-		bottom: 10px;
+	@media screen and (min-width: 1281px){
+		width: 300px;
+
+		position: fixed;
+		bottom: 0;
+		
+		border-top: 1px solid rgba(#fff, 0.25);
+		background-color: rgba(#fff, 0.05);
 	}
 }

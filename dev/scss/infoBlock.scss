@@ -11,28 +11,29 @@
 
 	font-family: 'Libre Baskerville', serif;
 
-	color: #ccc;
+	color: #090909;
 	overflow: hidden;	
-
-	transition: 1s all;
-
 
 	// for w < 1280px
 	margin: 0 0 25px 0;
 
 	// for w > 1280px
-	@include breakpoint(1280px){
-		margin: 0 0 10px 0;
+	@media screen and (min-width: 1281px){
+		padding: 40px;
+
+		width: 395px;
+		float: left;
+		margin: 0 15px 20px 0;
+
+		&:nth-child(2n){
+			margin-right: 0;
+		}
 	}
 }
 
-.infoBlock:hover{
-	box-shadow:  0 0 3px 3px rgba(white, 0.6);
-}
-
-.infoBlock.start{
-	opacity: 0;
-}
+// .infoBlock:hover{
+// 	box-shadow:  0 0 3px 3px rgba(white, 0.6);
+// }
 
 .infoBlock_bgBlock{
 	//commons
@@ -43,29 +44,35 @@
 	top: 0;
 	left: 0;
 
-	background-color: rgba(#222, 1);
-	background-image: url("http://www.transparenttextures.com/patterns/clean-gray-paper.png");
-	opacity: 0.5;
-
 	z-index: -1;
 
-	// for w > 1280px
-	@include breakpoint(1280px){
-		background-color: transparent;
-		opacity: 0.5;
+
+	// for w <= 1280px
+	@media screen and (max-width: 1280px){	
+		background-color: rgba(#ddd, 0.3);
+		background-image: url("http://www.transparenttextures.com/patterns/clean-gray-paper.png"), url("http://www.transparenttextures.com/patterns/clean-gray-paper.png"),url("http://www.transparenttextures.com/patterns/clean-gray-paper.png");
+		opacity: 1;
 	}
 }
 
 .itemTitle{
 	text-align: center;
-	font-size: 24px;
 	font-weight: bold;
+	line-height: 1.4;
 
 	cursor: pointer;
+
+	// postcss rucksack
+	font-size: responsive 20px 28px;
+	font-range: 320px 780px;
+
+	@media screen and (min-width: 1281px){
+		font-size: 24px;
+	}
 }
 
 .itemContent{
-	display: none;
+	display: block;
 
 	padding: 10px 0 0 0;
 	margin: 10px 0 0 0;
@@ -73,14 +80,16 @@
 	box-sizing: border-box;
 
 	overflow: hidden;
-	border-top: 5px double rgba(#FFAA00, 0.4);
+	border-top: 5px double rgba(white, 0.4);
 	
-	font-size: 18px;
-	line-height: 1.35;
-	font-weight: normal;
+	// postcss rucksack
+	font-size: responsive 16px 20px;
+	font-range: 320px 780px;
 
-	&.show{
-		display: block;
+	line-height: 1.4;
+
+	@media screen and (min-width: 1281px){
+		font-size: 18px;
 	}
 
 	ul{
@@ -93,7 +102,21 @@
 	}
 
 	.workname{
+		font-size: 110%;
+		color: #000;
 		font-weight: 900;
+		text-shadow: 1px 1px 3px #fff;
+	}
+
+	.worklinktext{
+		// width: 70%;
+
+		margin: 5px 0 30px;
+		padding: 5px 10px 0 30%;
+		border-top: 1px solid #ccc;
+
+		text-align: right;
+		font-size: 80%;
 	}
 
 	strong{
@@ -101,7 +124,12 @@
 	}
 
 	a{
-		color: white;
+		color: #491B00;
 		text-decoration: none;
+		font-weight: 900;
+	}
+
+	em{
+		font-style: italic;
 	}
 }

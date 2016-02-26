@@ -8,18 +8,26 @@ html, body{
 	}
 }
 
+// [body]
 body{
-	padding: 15vh 15vw 10px;
-
 	background-image: url(../../images/bg.jpg);
-
+	background-repeat: no-repeat;
 	background-attachment: fixed;
+	background-size: cover;
+	background-position: center bottom;
 
-	@include breakpoint(1280px){
-		padding-bottom: 15vh;
-
-		background-size: cover;
-		background-position: center bottom;
-		background-repeat: no-repeat;
+	// for w <= 480px
+	@media screen and (max-width: 480px){
+		background-color: #fff;
 	}
+
+	// for 480 < w < 1280
+	@media screen and (min-width: 1281px) {
+		background-position: center bottom;
+		padding: 50px calc(50% - 590px) 0px;
+
+		position: relative;
+	}
+
+	
 }

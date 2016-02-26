@@ -1,7 +1,6 @@
 @import "~breakpoint-sass/stylesheets/_breakpoint.scss";
 
 #selfpart{
-
 	//common
 	position: relative;
 	
@@ -9,19 +8,28 @@
 	
 	color: #fff;
 
-	//for w<1280px
-	width: 70%;
+	//for w <= 480
+	@media screen and (max-width: 480px){
+		width: 100%;
+		display: block;
+		margin: 50px 0 100px;
+		padding: 0 0 40px;
+	}
 
-	margin: 0 auto 100px;
-	
-	display: block;
+	// for 480 < w <= 1280
+	@media screen and (min-width: 481px) and (max-width: 1280px){
+		width: 420px;
+		margin: 75px auto 100px;
+		padding: 0 0 40px;
+	}
 
-	// for w>1280px
-	@include breakpoint(1280px){
-		width: 30vw;
-		height: 60vh;
-	
+	// for w > 1280px
+	@media screen and (min-width: 1281px){
+		width: 300px;
 		display: inline-block;
+
+		position: fixed;
+		bottom: 75px;
 	}
 }
 
@@ -34,24 +42,17 @@
 
 	background-color: rgba(255,255,255, 0.45);
 
-	// for w<1280px
-	width: 100%;
-	height: 3px;
 
-	bottom: -20px;
-	// left: 0;
+	// for  w <= 1280px
+	@media screen and (max-width: 1280px){
+		width: 100%;
+		height: 3px;
 
-	transform: skewY(-8deg);
+		bottom: -20px;
+		box-shadow: 0 5px 1px rgba(white, 0.35), 0 10px 2px rgba(white, 0.25);
 
-	@include breakpoint(1280px){
-		width: 3px;
-		height: 60vh;
-		
-		top: 0;
-		right: 0;
-	
-		transform: skewX(-8deg);
-		
+		transform: skewY(-8deg);	
+
 	}
 }
 
@@ -61,39 +62,38 @@
 	width: 100%;
 	margin: 0 auto;
 
-	// for w > 1280px
-	@include breakpoint(1280px){
-		width: 80%;
-	
-		position: absolute;
-		bottom: 0;
-		left: 0;
-	}
 }
 
 #sign{
 	//common
 	opacity: 0.55;
 
-	// for w < 1280px
-	width: 80%;
-	height: auto;
+	// for w <= 480px
+	@media screen  and (max-width: 1280px) {
+		width: 80%;
+		height: auto;
+
+		display: block;
+		margin: 0 auto;
+	}
+	
 
 	// for w>1280px
 	@include breakpoint(1280px){
 		width: 80%;
 		height: auto;
 	}
+
+	// for  w >= 1281px
+	@media screen and (min-width: 1281px){
+		width: 90%;
+		height: auto;
+	}
 }
 
 #email{
-	// float: right;
-	text-align: right;
 	position: relative;
 	top: -30px;
-
-	@include breakpoint(1280px){
-		float: none;
-	}
+	text-align: center;
 }
 
