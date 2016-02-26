@@ -1,5 +1,8 @@
-var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+// postcss
+var autoprefixer = require('autoprefixer');
+var rucksack = require('rucksack-css');
 
 module.exports = {
   entry:{
@@ -33,11 +36,20 @@ module.exports = {
       } 
     ],
   },
-  postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
+  postcss: [ 
+    autoprefixer({ browsers: ['last 2 versions']}),
+    // rucksack({ fallbacks: true}),
+  ],
   resolveLoader: { 
     alias: { "url-loader": require.resolve("url-loader") }
   },
   plugins: [
         new ExtractTextPlugin("[name].css")
-  ]
+  ],
+  devServer: {
+    host: 'localhost',
+    port: 8000,
+    noInfo: true,
+    // hot: true
+  }
 };
