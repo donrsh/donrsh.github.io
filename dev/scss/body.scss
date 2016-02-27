@@ -16,12 +16,14 @@ body{
 	background-size: cover;
 	background-position: center bottom;
 
-	// for w <= 480px
-	@media screen and (max-width: 480px){
-		background-color: #fff;
+	// transition: 1s padding;
+
+	// for w <= 1280px
+	@media screen and (max-width: 1280px){
+		// padding: 150px 0 0 0;
 	}
 
-	// for 480 < w < 1280
+	// for w >= 1281
 	@media screen and (min-width: 1281px) {
 		background-position: center bottom;
 		padding: 50px calc(50% - 590px) 0px;
