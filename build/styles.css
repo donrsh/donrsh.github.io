@@ -179,9 +179,6 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: center bottom; }
-  @media screen and (max-width: 480px) {
-    body {
-      background-color: #fff; } }
   @media screen and (min-width: 1281px) {
     body {
       background-position: center bottom;
@@ -190,18 +187,21 @@ body {
 #selfpart {
   position: relative;
   font-family: 'Cutive Mono';
-  color: #fff; }
+  color: #fff;
+  transition: height 0.7s; }
   @media screen and (max-width: 480px) {
     #selfpart {
       width: 100%;
+      height: 350px;
       display: block;
-      margin: 50px 0 100px;
-      padding: 0 0 40px; } }
+      margin: 0 0 100px;
+      padding: 75px 0 40px; } }
   @media screen and (min-width: 481px) and (max-width: 1280px) {
     #selfpart {
       width: 420px;
-      margin: 75px auto 100px;
-      padding: 0 0 40px; } }
+      height: 400px;
+      margin: 0 auto 100px;
+      padding: 50px 0 40px; } }
   @media screen and (min-width: 1281px) {
     #selfpart {
       width: 300px;
@@ -249,6 +249,62 @@ body {
   position: relative;
   top: -30px;
   text-align: center; }
+
+@media screen and (max-width: 1280px) {
+  #selfpart.selfpart-nav {
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2; } }
+
+#selfpart.selfpart-nav:after {
+  width: 0;
+  height: 0; }
+
+@media screen and (max-width: 480px) {
+  #selfpart.selfpart-nav #selfpartInnerWrapper {
+    width: 100%;
+    margin: 0 20px;
+    padding: 0 0 40px; } }
+
+@media screen and (min-width: 481px) and (max-width: 1280px) {
+  #selfpart.selfpart-nav #selfpartInnerWrapper {
+    width: 420px;
+    margin: 0 auto;
+    padding: 0 0 40px; } }
+
+@media screen and (max-width: 1280px) {
+  #selfpart.selfpart-nav #sign {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    height: 100px;
+    width: auto;
+    margin: 0; } }
+
+@media screen and (max-width: 480px) {
+  #selfpart.selfpart-nav #email {
+    font-size: 14px;
+    padding-right: 10px;
+    float: right;
+    opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    position: absolute;
+    top: 40px;
+    right: 20px; } }
+
+@media screen and (max-width: 1280px) {
+  #selfpart.selfpart-nav #email {
+    font-size: 14px;
+    padding-right: 10px;
+    float: right;
+    opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; } }
 #cvpart {
   width: 80%;
   margin: 0 auto; }
@@ -270,7 +326,11 @@ body {
   font-family: 'Libre Baskerville', serif;
   color: #090909;
   overflow: hidden;
+  transition: 0.9s opacity;
   margin: 0 0 25px 0; }
+  .infoBlock.start {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
   @media screen and (min-width: 1281px) {
     .infoBlock {
       padding: 40px;
@@ -280,20 +340,19 @@ body {
       .infoBlock:nth-child(2n) {
         margin-right: 0; } }
 
-.infoBlock_bgBlock {
-  width: 100%;
-  height: 1000px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1; }
-  @media screen and (max-width: 1280px) {
-    .infoBlock_bgBlock {
-      background-color: #dddddd;
-      background-color: rgba(221, 221, 221, 0.3);
-      background-image: url("http://www.transparenttextures.com/patterns/clean-gray-paper.png"), url("http://www.transparenttextures.com/patterns/clean-gray-paper.png"), url("http://www.transparenttextures.com/patterns/clean-gray-paper.png");
-      opacity: 1;
-      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; } }
+@media screen and (max-width: 1280px) {
+  .infoBlock_bgBlock {
+    width: 100%;
+    height: 1000px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #dddddd;
+    background-color: rgba(221, 221, 221, 0.3);
+    background-image: url("http://www.transparenttextures.com/patterns/clean-gray-paper.png"), url("http://www.transparenttextures.com/patterns/clean-gray-paper.png"), url("http://www.transparenttextures.com/patterns/clean-gray-paper.png");
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; } }
 
 .itemTitle {
   text-align: center;

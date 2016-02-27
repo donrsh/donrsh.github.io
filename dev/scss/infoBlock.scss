@@ -12,7 +12,13 @@
 	font-family: 'Libre Baskerville', serif;
 
 	color: #090909;
-	overflow: hidden;	
+	overflow: hidden;
+
+	transition: 0.9s opacity;
+
+	&.start{
+		opacity: 0;
+	}	
 
 	// for w < 1280px
 	margin: 0 0 25px 0;
@@ -31,24 +37,19 @@
 	}
 }
 
-// .infoBlock:hover{
-// 	box-shadow:  0 0 3px 3px rgba(white, 0.6);
-// }
-
 .infoBlock_bgBlock{
-	//commons
-	width: 100%;
-	height: 1000px;
-
-	position: absolute;
-	top: 0;
-	left: 0;
-
-	z-index: -1;
-
 
 	// for w <= 1280px
 	@media screen and (max-width: 1280px){	
+		width: 100%;
+		height: 1000px;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		z-index: -1;
+
 		background-color: rgba(#ddd, 0.3);
 		background-image: url("http://www.transparenttextures.com/patterns/clean-gray-paper.png"), url("http://www.transparenttextures.com/patterns/clean-gray-paper.png"),url("http://www.transparenttextures.com/patterns/clean-gray-paper.png");
 		opacity: 1;
