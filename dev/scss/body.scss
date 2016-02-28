@@ -16,7 +16,7 @@ body{
 	background-size: cover;
 	background-position: center bottom;
 
-	transition: 1s padding;
+	transition: 1s padding-top;
 
 	// for w <= 1280px
 	@media screen and (max-width: 1280px){
