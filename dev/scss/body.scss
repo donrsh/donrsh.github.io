@@ -16,11 +16,13 @@ body{
 	background-size: cover;
 	background-position: center bottom;
 
-	// transition: 1s padding;
+	transition: 1s padding;
 
 	// for w <= 1280px
 	@media screen and (max-width: 1280px){
-		// padding: 150px 0 0 0;
+		&.fatPadding{
+			padding: 300px 0 0 0;
+		}
 	}
 
 	// for w >= 1281

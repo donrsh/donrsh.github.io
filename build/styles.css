@@ -178,7 +178,11 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-position: center bottom; }
+  background-position: center bottom;
+  transition: 1s padding; }
+  @media screen and (max-width: 1280px) {
+    body.fatPadding {
+      padding: 300px 0 0 0; } }
   @media screen and (min-width: 1281px) {
     body {
       background-position: center bottom;
