@@ -1,3 +1,4 @@
+require('./scss/variables.scss')
 require('./scss/default.scss')
 require('./scss/body.scss')
 require('./scss/selfpart.scss');

@@ -1,8 +1,9 @@
-@import "~breakpoint-sass/stylesheets/_breakpoint.scss";
+@import "./variables.scss";
 
 html, body{
 
-	@include breakpoint(1280px){
+	// for lg
+	@media screen and (min-width: $lglb) {
 		width: 100%;
 		height: 100%;
 	}
@@ -18,15 +19,15 @@ body{
 
 	transition: 1s padding-top;
 
-	// for w <= 1280px
-	@media screen and (max-width: 1280px){
-		&.fatPadding{
-			padding: 300px 0 0 0;
-		}
-	}
+	// for nav animation, for sm and md
+	// @media screen and (max-width: 1280px){
+	// 	&.fatPadding{
+	// 		padding: 300px 0 0 0;
+	// 	}
+	// }
 
-	// for w >= 1281
-	@media screen and (min-width: 1281px) {
+	// for w lg
+	@media screen and (min-width: $lglb) {
 		background-position: center bottom;
 		padding: 50px calc(50% - 590px) 0px;
 

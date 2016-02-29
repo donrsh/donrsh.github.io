@@ -1,5 +1,4 @@
-@import "~breakpoint-sass/stylesheets/_breakpoint.scss";
-
+@import './variables.scss';
 
 .infoBlock{
 	//commons
@@ -20,11 +19,15 @@
 		opacity: 0;
 	}	
 
-	// for w < 1280px
-	margin: 0 0 25px 0;
+	// for sm and md
+	@media screen and (max-width: $mdub){
+		margin: 0 auto 25px;
+		max-width: 700px;
+	}
 
-	// for w > 1280px
-	@media screen and (min-width: 1281px){
+
+	// for lg
+	@media screen and (min-width: $lglb){
 		padding: 40px;
 
 		width: 395px;
@@ -39,20 +42,23 @@
 
 .infoBlock_bgBlock{
 
-	// for w <= 1280px
-	@media screen and (max-width: 1280px){	
+	// for sm and md
+	@media screen and (max-width: $mdub){	
 		width: 100%;
-
-		height: 3000px;
 
 		position: absolute;
 		top: 0;
+		bottom: 0;
 		left: 0;
+		right: 0;
 
 		z-index: -1;
 
-		background-color: rgba(#ddd, 0.3);
-		background-image: url("http://www.transparenttextures.com/patterns/clean-gray-paper.png"), url("http://www.transparenttextures.com/patterns/clean-gray-paper.png"),url("http://www.transparenttextures.com/patterns/clean-gray-paper.png");
+		background-color: rgba(#ddd, 0.95);
+
+		background-image: url("http://www.transparenttextures.com/patterns/always-grey.png");
+		background-size: 20px 20px;
+
 		opacity: 1;
 	}
 }
@@ -68,7 +74,8 @@
 	font-size: responsive 20px 28px;
 	font-range: 320px 780px;
 
-	@media screen and (min-width: 1281px){
+	// for lg
+	@media screen and (min-width: $lglb){
 		font-size: 24px;
 	}
 }
@@ -76,21 +83,22 @@
 .itemContent{
 	display: block;
 
-	padding: 10px 0 0 0;
+	padding: 25px 0 0 0;
 	margin: 10px 0 0 0;
 
 	box-sizing: border-box;
 
 	overflow: hidden;
-	border-top: 5px double rgba(white, 0.4);
+	border-top: 5px ridge #999 ;
 	
 	// postcss rucksack
-	font-size: responsive 16px 20px;
+	font-size: responsive 14px 18px;
 	font-range: 320px 780px;
 
 	line-height: 1.4;
 
-	@media screen and (min-width: 1281px){
+	// for lg
+	@media screen and (min-width: $lglb){
 		font-size: 18px;
 	}
 
@@ -100,25 +108,46 @@
 	}
 
 	li{
+		clear: both;
 		margin: 0 0 12px;
 	}
 
 	.workname{
-		font-size: 110%;
+		font-size: 115%;
 		color: #000;
 		font-weight: 900;
 		text-shadow: 1px 1px 3px #fff;
 	}
 
 	.worklinktext{
-		// width: 70%;
-
-		margin: 5px 0 30px;
-		padding: 5px 10px 0 30%;
-		border-top: 1px solid #ccc;
+		width: 70%;
+		float: right;
+		margin: 5px 20px 30px;
+		border-top: 2px dashed #999;
 
 		text-align: right;
 		font-size: 80%;
+
+		color: #777;
+
+		// for sm
+		@media screen and (max-width: $smub) {
+			width: 90%;
+			padding: 5px 10px 0 0;
+		}
+
+		// for md
+		@media screen and (min-width: $mdlb) and (max-width: $mdub){
+			width: 70%;
+			padding: 5px 10px 0 50px;
+		}
+
+		// for lg
+		// for md
+		@media screen and (min-width: $lglb){
+			width: 90%;
+			padding: 5px 10px 0 50px;
+		}
 	}
 
 	strong{
@@ -126,7 +155,8 @@
 	}
 
 	a{
-		color: #491B00;
+		display: inline-block;
+		color: #000;
 		text-decoration: none;
 		font-weight: 900;
 	}

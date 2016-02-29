@@ -1,20 +1,22 @@
-@import "~breakpoint-sass/stylesheets/_breakpoint.scss";
+@import './variables.scss';
 
 #cvpart{
 	width: 80%;
 
 	margin: 0 auto;
 
-	@media screen and (min-width: 1281px){ 
+	// for lg
+	@media screen and (min-width: $lglb){ 
 		width: 810px;
 
 		display: inline-block;
 		float: right;
 	
-		background-color: rgba(#ddd, 0.3);
-		background-image: url("http://www.transparenttextures.com/patterns/clean-gray-paper.png"), url("http://www.transparenttextures.com/patterns/clean-gray-paper.png"),url("http://www.transparenttextures.com/patterns/clean-gray-paper.png");
-		opacity: 1;
+		background-color: rgba(#ddd, 0.95);
 
-		z-index: -1;
+		background-image: url("http://www.transparenttextures.com/patterns/always-grey.png");
+		background-size: 20px 20px;
+
+		opacity: 1;
 	}
 }

@@ -21,20 +21,21 @@ $(document).ready(function(){
 		$('#worksurroundings').removeClass('start');
 	}, 2000);
 
-	$(window).on('scroll', function(){
-		// console.log(window.pageYOffset);
-		if(window.pageYOffset > 0){
-			$('#selfpart').addClass('selfpart-nav');
-			$('body').addClass('fatPadding');
+// for animation
+	// $(window).on('scroll', function(){
+	// 	// console.log(window.pageYOffset);
+	// 	if(window.pageYOffset > 0){
+	// 		$('#selfpart').addClass('selfpart-nav');
+	// 		$('body').addClass('fatPadding');
 
-		}
+	// 	}
 
-		if(window.pageYOffset <= 0){
-			// console.log('alert!')
-			$('#selfpart').removeClass('selfpart-nav');
-			$('body').removeClass('fatPadding');
+	// 	if(window.pageYOffset <= 0){
+	// 		// console.log('alert!')
+	// 		$('#selfpart').removeClass('selfpart-nav');
+	// 		$('body').removeClass('fatPadding');
 
-		}
-	})
+	// 	}
+	// })
 
 });
